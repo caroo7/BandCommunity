@@ -1,0 +1,10 @@
+BandCommunity portal to make band life easier.
+
+Technologies:
+- Java 1.8
+- Git
+- Apache Maven,
+- PostgreSQL database,
+- Hibernate Framework,
+- Spring Boot framework,
+- Angular 2 GUI framework
