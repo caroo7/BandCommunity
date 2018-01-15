@@ -8,7 +8,7 @@ import java.util.List;
 public class Member {
 
     @Id
-    //@GeneratedValue - not generate yet - we provide data
+    //@GeneratedValue - not generate yet - we provide data by hand
     private long id;
 
     private String name;
@@ -17,9 +17,10 @@ public class Member {
 
     private String country;
 
-    @ManyToMany
+    // enable this after HATEOAS will be introduced
+    /*@ManyToMany
     @JoinTable(name="member_band", joinColumns=@JoinColumn(name="member_id"), inverseJoinColumns=@JoinColumn(name="band_id"))
-    private List<Band> bands;
+    private List<Band> bands;*/
 
     public String getName() {
         return name;
@@ -33,7 +34,7 @@ public class Member {
         return country;
     }
 
-    public List<Band> getBands() {
+    /*public List<Band> getBands() {
         return bands;
-    }
+    }*/
 }

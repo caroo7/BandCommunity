@@ -1,9 +1,6 @@
 package entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -22,7 +19,8 @@ public class Band {
 
     private String city;
 
-    @ManyToMany(mappedBy = "bands")
+    @ManyToMany
+    @JoinTable(name="member_band", joinColumns=@JoinColumn(name="band_id"), inverseJoinColumns=@JoinColumn(name="member_id"))
     private List<Member> members;
 
     public String getName() {
