@@ -16,6 +16,10 @@ public class Member {
     private String surname;
 
     private String country;
+    @OneToMany
+    @JoinTable(name="member_instrument", joinColumns=@JoinColumn(name="member_id"), inverseJoinColumns=@JoinColumn(name="instrument_id"))
+    private List<Instrument> instruments;
+
 
     // enable this after HATEOAS will be introduced
     /*@ManyToMany
@@ -33,6 +37,8 @@ public class Member {
     public String getCountry() {
         return country;
     }
+
+    public List<Instrument> getInstruments() { return instruments; }
 
     /*public List<Band> getBands() {
         return bands;
