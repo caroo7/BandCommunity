@@ -19,6 +19,9 @@ public class Band {
 
     private String city;
 
+    @Column(name = "isactive")
+    private boolean isActive;
+
     @ManyToMany
     @JoinTable(name="member_band", joinColumns=@JoinColumn(name="band_id"), inverseJoinColumns=@JoinColumn(name="member_id"))
     private List<Member> members;
@@ -42,4 +45,6 @@ public class Band {
     public List<Member> getMembers() {
         return members;
     }
+
+    public boolean isActive() { return isActive; }
 }
