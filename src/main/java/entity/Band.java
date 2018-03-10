@@ -10,7 +10,6 @@ public class Band {
     //@GeneratedValue - not generate yet - we provide data
     private long id;
 
-    @Column(unique = true)
     private String name;
 
     private String type;

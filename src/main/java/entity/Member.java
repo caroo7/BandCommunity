@@ -11,7 +11,7 @@ public class Member {
     //@GeneratedValue - not generate yet - we provide data by hand
     private long id;
 
-    @Column(unique = true)
+
     private String name;
 
     private String surname;
