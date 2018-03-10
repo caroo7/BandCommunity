@@ -26,4 +26,13 @@ public class BandDao {
         return bands.get(0);
     }
 
+    public List<Band> getActiveBands () {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Criteria criteria = currentSession.createCriteria(Band.class);
+        criteria.add(Restrictions.eq("isActive", true));
+        List<Band> bands = criteria.list();
+        return bands;
+
+    }
+
 }

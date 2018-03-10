@@ -10,7 +10,6 @@ public class Band {
     //@GeneratedValue - not generate yet - we provide data
     private long id;
 
-    @Column(unique = true)
     private String name;
 
     private String type;
@@ -18,6 +17,9 @@ public class Band {
     private String country;
 
     private String city;
+
+    @Column(name = "isactive")
+    private boolean isActive;
 
     @ManyToMany
     @JoinTable(name="member_band", joinColumns=@JoinColumn(name="band_id"), inverseJoinColumns=@JoinColumn(name="member_id"))
@@ -42,4 +44,6 @@ public class Band {
     public List<Member> getMembers() {
         return members;
     }
+
+    public boolean isActive() { return isActive; }
 }

@@ -11,6 +11,7 @@ public class Member {
     //@GeneratedValue - not generate yet - we provide data by hand
     private long id;
 
+
     private String name;
 
     private String surname;
